@@ -1,10 +1,15 @@
 import Swal from 'sweetalert2'
+import { AuthContext } from "../../providers/AuthProvider";
+import { useContext } from "react";
 
 const AddFood = () => {
+    const { user } = useContext(AuthContext);
     const handleAddFood = event => {
         event.preventDefault();
 
         const form = event.target;
+
+        const uID = user.uid;
 
         const foodImage = form.foodImage.value;
         const foodName = form.foodName.value;
@@ -16,7 +21,7 @@ const AddFood = () => {
         const expDate = form.expDate.value;
         const notes = form.notes.value;
 
-        const newFood = { foodImage, foodName, donatorImage,  donatorName, donatorEmail, foodQty, pickLocation, notes, expDate }
+        const newFood = { foodImage, foodName, donatorImage,  donatorName, donatorEmail, foodQty, pickLocation, notes, expDate, uID }
 
         //console.log(newProduct);
 

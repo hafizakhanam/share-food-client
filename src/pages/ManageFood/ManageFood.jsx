@@ -1,12 +1,22 @@
-import {  useState } from "react";
-import { Link, useLoaderData } from "react-router-dom";
+import {  useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Swal from 'sweetalert2'
-
+import { AuthContext } from "../../providers/AuthProvider";
+import { useContext } from "react";
 
 
 const ManageFood = () => {
-    const foods = useLoaderData();
-    const [manageFoods, setManageFoods] = useState(foods);
+    //const foods = useLoaderData();
+
+    const { user } = useContext(AuthContext);
+    const uID = user?.uid;
+    const [manageFoods, setManageFoods] = useState([]);
+    console.log(uID)
+    useEffect( ()=>{
+        fetch(`http://localhost:5000/manage-food/${uID}`)
+        .then(res => res.json())
+        .then(data => setManageFoods(data))
+    },[])
 
     const handleDelete = _id =>{
         Swal.fire({
@@ -41,13 +51,12 @@ const ManageFood = () => {
     
     return (
         <div className="py-24 bg-white">
-            <div className="max-w-[1280px] mx-auto px-4">
+            <div className="max-w-[1380px] mx-auto px-4">
                 <div className="overflow-x-auto min-h-screen">
                     <table className="table text-black">
                         {/* head */}
                         <thead className="text-black">
                         <tr>
-                            <th>SL</th>
                             <th>Food Image</th>
                             <th>Food Name</th>
                             <th>Donator Image</th>
@@ -58,12 +67,12 @@ const ManageFood = () => {
                             <th>Pickup Location</th>
                             <th>Additional Notes</th>
                             <th>Action</th>
+                            <th></th>
                         </tr>
                         </thead>
                         <tbody>
                             {
-                            manageFoods.map((food, index) => <tr key={food._id}>
-                                <th><label>{(index + 1)}</label></th>
+                            manageFoods.map((food) => <tr key={food._id}>
                                 <td><img src={food.foodImage} /></td>
                                 <td>{food.foodName}</td>
                                 <td><img className="w-12" src={food.donatorImage} /></td>
@@ -78,6 +87,9 @@ const ManageFood = () => {
                                         <Link className="w-[40px]" to={`/updateFood/${food._id}`}><img src="https://i.ibb.co/vj7LcH5/9349889.png" /></Link>
                                         <button className="btn bg-pink-800 w-[30px] h-[30px] ml-2" onClick={() =>  handleDelete(food._id)}>X</button>
                                     </div>
+                                </td>
+                                <td>
+                                    <Link className="w-[40px]" to={`/manageFood/${food._id}`}><button className="btn bg-pink-800">Manage</button></Link>
                                 </td>
                             </tr>)}
                         </tbody>
