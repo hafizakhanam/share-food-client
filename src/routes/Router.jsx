@@ -23,7 +23,7 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5000/food')
+                loader: () => fetch('https://share-food-server-axpy5ie95-hafizas-projects.vercel.app/food')
             },
             {
                 path: "/addFood",
@@ -32,17 +32,17 @@ const router = createBrowserRouter([
             {
                 path: "/foods",
                 element: <AllFood></AllFood>,
-                loader: () => fetch('http://localhost:5000/food')
+                loader: () => fetch('https://share-food-server-axpy5ie95-hafizas-projects.vercel.app/food')
             },
             {
                 path: "/food/:id",
                 element: <PrivateRoute><FoodDetails></FoodDetails></PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/food/${params.id}`)
+                loader: ({params}) => fetch(`https://share-food-server-axpy5ie95-hafizas-projects.vercel.app/food/${params.id}`)
             },
             {
                 path: "updateFood/:id",
                 element: <PrivateRoute><UpdateFood></UpdateFood></PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/food/${params.id}`)
+                loader: ({params}) => fetch(`https://share-food-server-axpy5ie95-hafizas-projects.vercel.app/food/${params.id}`)
             },
             {
                 path: "/foodRequest",
@@ -55,7 +55,7 @@ const router = createBrowserRouter([
             {
                 path: "manageFood/:id",
                 element: <PrivateRoute><ManageSingleFood></ManageSingleFood></PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/food/${params.id}`)
+                loader: ({params}) => fetch(`https://share-food-server-axpy5ie95-hafizas-projects.vercel.app/food/${params.id}`)
             },
             {
                 path: "/login",
