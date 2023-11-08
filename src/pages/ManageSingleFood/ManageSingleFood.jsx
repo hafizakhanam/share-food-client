@@ -4,7 +4,7 @@ import { useLoaderData } from "react-router-dom";
 const ManageSingleFood = () => {
     const foodData = useLoaderData();
 
-    const { foodName, donatorName, donatorImage, donatorEmail, uID } = foodData; 
+    const { foodName, donatorName, donatorImage, donatorEmail } = foodData; 
     
     return (
         <div className="py-24 bg-white">
