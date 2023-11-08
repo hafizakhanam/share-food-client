@@ -1,5 +1,5 @@
 {
-  "name": "coffee-shop-client",
+  "name": "share-food-client",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -17,14 +17,13 @@
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
     "react": "^18.2.0",
-    "react-awesome-slider": "^4.1.0",
     "react-dom": "^18.2.0",
+    "react-elastic-carousel": "^0.11.5",
     "react-icons": "^4.11.0",
     "react-id-swiper": "^4.0.0",
     "react-router-dom": "^6.16.0",
     "sort-by": "^1.2.0",
     "sweetalert2": "^11.7.32",
-    "swiper": "^10.3.1",
     "table": "^6.8.1"
   },
   "devDependencies": {
