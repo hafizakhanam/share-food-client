@@ -78,7 +78,7 @@ const FoodRequest = () => {
                                     <td>{request.expDate}</td>
                                     <td>{request.reqDate}</td>
                                     <td>{request.donationMoney}</td>
-                                    <td><div className="badge bg-blue-950">available</div></td>
+                                    <td><div className="badge bg-blue-950">Pending</div></td>
                                     <td>
                                         <div className="flex items-center">
                                             <button className="btn bg-pink-800 w-[30px] h-[30px] ml-2" onClick={() =>  handleDelete(request._id)}>X</button>
