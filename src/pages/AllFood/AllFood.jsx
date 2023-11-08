@@ -14,7 +14,7 @@ const AllFood = () => {
     useEffect(()=>{
       handleSort();
       handleSearch();
-    },[isSorted, isSearch])
+    },[isSorted])
 
     const handleSort = () => {
       if (isSorted) {
