@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion"
 
 const Food = ({food}) => {
     const { _id, foodImage, foodName, donatorImage, donatorName, foodQty, pickLocation, notes, expDate } = food;
     return (
         
-        <div className="card bg-blue-50">
+        <motion.div whileHover={{ scale: 0.9 }} whileTap={{ scale: 0.7 }} className="card bg-blue-50">
             <img className="rounded-t-lg max-h-60" src={foodImage} alt="Image" />
             
             <div className="card-body flex justify-between bg-blue-950 rounded-b-lg">
@@ -22,7 +23,7 @@ const Food = ({food}) => {
                 <button className="btn bg-pink-800 mt-5"><Link to={`/food/${_id}`}>Details</Link></button>
 
             </div>
-        </div>
+        </motion.div>
         
     );
 };
