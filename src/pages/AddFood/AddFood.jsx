@@ -108,7 +108,7 @@ const AddFood = () => {
                                 <input type="text" name="notes" className="input input-bordered w-full bg-white" />
                             </div>
                         </div>
-                        <input type="submit" value="Add Food" className="btn btn-block bg-blue-950 mt-8" />
+                        <input type="submit" value="Add Food" className="btn btn-block bg-pink-800 mt-8" />
 
                     </form>
             </div>
