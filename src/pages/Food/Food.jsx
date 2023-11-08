@@ -5,7 +5,7 @@ const Food = ({food}) => {
     const { _id, foodImage, foodName, donatorImage, donatorName, foodQty, pickLocation, notes, expDate } = food;
     return (
         
-        <motion.div whileHover={{ scale: 0.9 }} whileTap={{ scale: 0.7 }} className="card bg-blue-50">
+        <motion.div whileHover={{ scale: 0.9 }} className="card bg-blue-50">
             <img className="rounded-t-lg max-h-60" src={foodImage} alt="Image" />
             
             <div className="card-body flex justify-between bg-blue-950 rounded-b-lg">
@@ -20,7 +20,7 @@ const Food = ({food}) => {
                     <img className="rounded-full mx-5 max-h-8" src={donatorImage} alt="Image" />
                     <h3 className="text-base">{donatorName}</h3>
                 </div>
-                <button className="btn bg-pink-800 mt-5"><Link to={`/food/${_id}`}>Details</Link></button>
+                <Link to={`/food/${_id}`}><button className="btn bg-pink-800 mt-5 w-full">Details</button></Link>
 
             </div>
         </motion.div>

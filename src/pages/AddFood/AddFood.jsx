@@ -68,13 +68,13 @@ const AddFood = () => {
                                 <label className="label">
                                     <span className="label-text">Food Image</span>
                                 </label>
-                                <input type="text" name="foodImage" className="input input-bordered w-full bg-white" />
+                                <input type="text" name="foodImage" className="input input-bordered w-full bg-white" required />
                             </div>
                             <div className="form-control md:w-1/2 ml-4">
                                 <label className="label">
                                     <span className="label-text">Food Name</span>
                                 </label>
-                                <input type="text" name="foodName" className="input input-bordered w-full bg-white" />
+                                <input type="text" name="foodName" className="input input-bordered w-full bg-white" required />
                             </div>
                         </div>
                         {/* form category and details row */}
@@ -83,13 +83,13 @@ const AddFood = () => {
                                 <label className="label">
                                     <span className="label-text">Expired Date</span>
                                 </label>
-                                <input type="date" name="expDate" className="input input-bordered w-full bg-white" />
+                                <input type="date" name="expDate" className="input input-bordered w-full bg-white" required />
                             </div>
                             <div className="form-control md:w-1/2 ml-4">
                                 <label className="label">
                                     <span className="label-text">Food Quantity</span>
                                 </label>
-                                <input type="number" name="foodQty" className="input input-bordered w-full bg-white" />
+                                <input type="number" name="foodQty" className="input input-bordered w-full bg-white" required />
                             </div>
 
                         </div>
@@ -99,7 +99,7 @@ const AddFood = () => {
                                 <label className="label">
                                     <span className="label-text">Pickup Location</span>
                                 </label>
-                                <input type="text" name="pickLocation" className="input input-bordered w-full bg-white" />
+                                <input type="text" name="pickLocation" className="input input-bordered w-full bg-white" required />
                             </div>
                             <div className="form-control md:w-1/2 ml-4">
                                 <label className="label">
