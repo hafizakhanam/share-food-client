@@ -81,7 +81,6 @@ const FoodRequest = () => {
                                     <td><div className="badge bg-blue-950">available</div></td>
                                     <td>
                                         <div className="flex items-center">
-                                            <Link className="w-[40px]" to={`/updateRequest/${request._id}`}><img src="https://i.ibb.co/vj7LcH5/9349889.png" /></Link>
                                             <button className="btn bg-pink-800 w-[30px] h-[30px] ml-2" onClick={() =>  handleDelete(request._id)}>X</button>
                                         </div>
                                     </td>

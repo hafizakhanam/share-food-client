@@ -51,7 +51,7 @@ const ManageFood = () => {
     
     return (
         <div className="py-24 bg-white">
-            <div className="max-w-[1380px] mx-auto px-4">
+            <div className="max-w-[1420px] mx-auto px-4">
                 <div className="overflow-x-auto min-h-screen">
                     <table className="table text-black">
                         {/* head */}
@@ -67,7 +67,7 @@ const ManageFood = () => {
                             <th>Pickup Location</th>
                             <th>Additional Notes</th>
                             <th>Action</th>
-                            <th></th>
+                            <th>Manage Food</th>
                         </tr>
                         </thead>
                         <tbody>

@@ -1,10 +1,20 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
 
 const Header = () => {
     const {user, logOut} = useContext(AuthContext);
-    console.log(user)
+    const uEmail = user?.email;
+    //console.log(uEmail)
+
+    const [userData, setUserData] = useState([]);
+
+    useEffect( ()=>{
+        fetch(`http://localhost:5000/user/${uEmail}`)
+        .then(res => res.json())
+        .then(data => setUserData(data))
+    },[]);
+
     const handleLogout = () =>{
         logOut()
         .then(result =>{
@@ -62,12 +72,12 @@ const Header = () => {
                                             user.photoURL ? <>
                                                 <img className="max-w-5" src={user.photoURL} />
                                             </>
-                                            : <img className="max-w-5" src="https://i.ibb.co/TH1VvtS/585e4bf3cb11b227491c339a.png" />
+                                            : <img className="max-w-5" src={userData.photoURL} />
                                         }
                                     
                                     </div>
                                 </label>
-                                <span className="user-email">{user.displayName ? user.displayName : user.email}</span>
+                                <span className="user-email">{user.displayName ? user.displayName : userData.name}</span>
                             </div>
                             
                             <button onClick={handleLogout} className="btn bg-pink-800 capitalize">Logout</button>

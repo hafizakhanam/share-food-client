@@ -16,7 +16,7 @@ const Registration = () => {
         const name = e.target.name.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
-        const photoUrl = e.target.photoUrl.value;
+        const photoURL = e.target.photoURL.value;
         //console.log(email, password);
         
 
@@ -37,7 +37,7 @@ const Registration = () => {
         setRegistrationSuccess('');
 
         createUser(email, password).then(result =>{
-            const newUser = {email};
+            const newUser = {email, name, photoURL};
             // send data to the server
             fetch('http://localhost:5000/user', {
                 method: 'POST',
@@ -91,7 +91,7 @@ const Registration = () => {
                         <label className="label">
                             <span className="label-text text-blue-950">Photo URL</span>
                         </label>
-                        <input type="text" name="photoUrl" placeholder="Photo URL" className="input input-bordered bg-white" required />
+                        <input type="text" name="photoURL" placeholder="Photo URL" className="input input-bordered bg-white" required />
                     </div>
                     <div className="form-control my-6">
                         <button className="btn bg-blue-950">Submit</button>

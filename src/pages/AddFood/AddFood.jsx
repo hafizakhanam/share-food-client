@@ -1,21 +1,32 @@
 import Swal from 'sweetalert2'
 import { AuthContext } from "../../providers/AuthProvider";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 
 const AddFood = () => {
     const { user } = useContext(AuthContext);
+    const uEmail = user?.email;
+    //console.log(uEmail)
+
+    const [userData, setUserData] = useState([]);
+
+    useEffect( ()=>{
+        fetch(`http://localhost:5000/user/${uEmail}`)
+        .then(res => res.json())
+        .then(data => setUserData(data))
+    },[]);
+
     const handleAddFood = event => {
         event.preventDefault();
 
         const form = event.target;
 
-        const uID = user.uid;
+        const uID = user?.uid;
+        const donatorImage = userData.photoURL;
+        const donatorName = userData.name;
+        const donatorEmail = userData.email;
 
         const foodImage = form.foodImage.value;
         const foodName = form.foodName.value;
-        const donatorImage = form.donatorImage.value;
-        const donatorName = form.donatorName.value;
-        const donatorEmail = form.donatorEmail.value;
         const foodQty = form.foodQty.value;
         const pickLocation = form.pickLocation.value;
         const expDate = form.expDate.value;
@@ -35,7 +46,7 @@ const AddFood = () => {
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data);
+            event.target.reset();
             if(data.insertedId){
                 Swal.fire({
                     title: 'Success!',
@@ -66,29 +77,13 @@ const AddFood = () => {
                                 <input type="text" name="foodName" className="input input-bordered w-full bg-white" />
                             </div>
                         </div>
-                        {/* form supplier row */}
-                        <div className="md:flex mb-8">
-                            <div className="form-control md:w-1/2">
-                                <label className="label">
-                                    <span className="label-text">Donator Image URL</span>
-                                </label>
-                                <input type="text" name="donatorImage" className="input input-bordered w-full bg-white" />
-                            </div>
-                            
-                            <div className="form-control md:w-1/2 ml-4">
-                                <label className="label">
-                                    <span className="label-text">Donator Name</span>
-                                </label>
-                                <input type="text" name="donatorName" className="input input-bordered w-full bg-white" />
-                            </div>
-                        </div>
                         {/* form category and details row */}
                         <div className="md:flex mb-8">
                             <div className="form-control md:w-1/2">
                                 <label className="label">
-                                    <span className="label-text">Donator Email</span>
+                                    <span className="label-text">Expired Date</span>
                                 </label>
-                                <input type="email" name="donatorEmail" className="input input-bordered w-full bg-white" />
+                                <input type="date" name="expDate" className="input input-bordered w-full bg-white" />
                             </div>
                             <div className="form-control md:w-1/2 ml-4">
                                 <label className="label">
@@ -99,23 +94,14 @@ const AddFood = () => {
 
                         </div>
                         {/* form Photo url row */}
-                        <div className="md:flex mb-8">
+                        <div className="md:flex mb-8">     
                             <div className="form-control md:w-1/2">
-                                <label className="label">
-                                    <span className="label-text">Expired Date</span>
-                                </label>
-                                <input type="date" name="expDate" className="input input-bordered w-full bg-white" />
-                            </div>
-                            <div className="form-control md:w-1/2 ml-4">
                                 <label className="label">
                                     <span className="label-text">Pickup Location</span>
                                 </label>
                                 <input type="text" name="pickLocation" className="input input-bordered w-full bg-white" />
                             </div>
-                        </div>
-
-                        <div className="mb-8">
-                            <div className="form-control md:w-full">
+                            <div className="form-control md:w-1/2 ml-4">
                                 <label className="label">
                                     <span className="label-text">Additional Notes</span>
                                 </label>

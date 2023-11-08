@@ -19,7 +19,6 @@ body {
     display: none;
     transition: .4s ease-in-out;
     position: absolute;
-    left: -100%;
 }
 
 .user-info:hover .user-email {
