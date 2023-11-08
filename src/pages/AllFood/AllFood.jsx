@@ -28,11 +28,12 @@ const AllFood = () => {
     return (
       <div className="py-24 bg-white">
         <div className="max-w-[1280px] mx-auto px-4">
-        <Carousel itemsToShow={1}>
-          <img src="https://i.ibb.co/sWj6CFG/footer-banner.webp" />
-          <img src="https://i.ibb.co/sWj6CFG/footer-banner.webp" />
-          <img src="https://i.ibb.co/sWj6CFG/footer-banner.webp" />
-        </Carousel>
+          <Carousel itemsToShow={1}>
+            <img src="https://i.ibb.co/sWj6CFG/footer-banner.webp" />
+            <img src="https://i.ibb.co/sWj6CFG/footer-banner.webp" />
+            <img src="https://i.ibb.co/sWj6CFG/footer-banner.webp" />
+          </Carousel>
+          
           <h2 className="text-center text-blue-950 font-bold text-5xl my-16">Foods</h2>
           <div className="mb-8 text-right"><button className="btn border border-white" onClick={()=>setIsSorted(!isSorted)}>Sort by Name</button></div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
