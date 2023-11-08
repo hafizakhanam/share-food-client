@@ -14,8 +14,8 @@ const Footer = () => {
                     <div className="contact">
                         <ul>
                             <li><strong>Address: </strong>223 – 8th Avenue SW Calgary, AB T2P 1B5</li>
-                            <li><strong>Phone: </strong>403.265.3665</li>
-                            <li><strong>Email: </strong>info@good-food.com</li>
+                            <Link to="#"><li><strong>Phone: </strong>403.265.3665</li></Link>
+                            <Link to="#"><li><strong>Email: </strong>info@good-food.com</li></Link>
                         </ul>
                     </div>
                     <div className="icon">
