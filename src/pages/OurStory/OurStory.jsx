@@ -20,8 +20,8 @@ const OurStory = () => {
 
                             These stories will help you connect with your prospects, differentiate your goal, and ultimately drive more passion.</p>
                     </div>
-                    <div className="img">
-                        <img data-aos="fade-right" className="rounded-lg" src="https://i.ibb.co/wBS5y9V/friendly-team.jpg" alt="Image" />
+                    <div className="img items-center flex">
+                        <img data-aos="fade-right" className="rounded-lg" src="https://i.ibb.co/r5qZNRk/Wonton-2-min-scaled.jpg" alt="Image" />
                     </div>
                 </div> 
             </div> 
