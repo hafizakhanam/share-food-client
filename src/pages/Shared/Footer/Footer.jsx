@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 const Footer = () => {
@@ -19,9 +20,9 @@ const Footer = () => {
                     </div>
                     <div className="icon">
                         <ul className="flex md:justify-end">
-                            <li><img className="w-14" src="https://i.ibb.co/KxJdb4W/instagram-icon-white-on-gradient.png" /></li>
-                            <li><img className="w-10 ml-3" src="https://i.ibb.co/D4KCpr9/facebook-logo-2019.png" /></li>
-                            <li><img className="w-10 ml-5 mt-2" src="https://i.ibb.co/vJk7sbQ/Logo-of-Twitter-svg.png" /></li>
+                            <Link to="#"><li><img className="w-14" src="https://i.ibb.co/KxJdb4W/instagram-icon-white-on-gradient.png" /></li></Link>
+                            <Link to="#"><li><img className="w-10 ml-3" src="https://i.ibb.co/D4KCpr9/facebook-logo-2019.png" /></li></Link>
+                            <Link to="#"><li><img className="w-10 ml-5 mt-2" src="https://i.ibb.co/vJk7sbQ/Logo-of-Twitter-svg.png" /></li></Link> 
                         </ul>
                     </div>
                 </div> 
