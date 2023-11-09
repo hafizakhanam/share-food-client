@@ -37,7 +37,7 @@ const FoodDetails = () => {
         //console.log(request);
 
         // send data to the server
-        fetch('http://localhost:5000/request', {
+        fetch('https://share-food-server.vercel.app/request', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

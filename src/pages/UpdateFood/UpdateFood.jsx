@@ -25,7 +25,7 @@ const UpdateFood = () => {
         //console.log(updateFood);
 
         // send data to the server
-        fetch(`http://localhost:5000/food/${_id}`, {
+        fetch(`https://share-food-server.vercel.app/food/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -44,10 +44,6 @@ const UpdateFood = () => {
                     })
             }
         })
-        .catch((error) => {
-            console.error('Error:', error);
-            // Handle the error as needed, e.g., show an error message to the user.
-        });
     }
     return (
         <div className="py-24 bg-white">

@@ -39,7 +39,7 @@ const Registration = () => {
         createUser(email, password).then(result =>{
             const newUser = {email, name, photoURL};
             // send data to the server
-            fetch('http://localhost:5000/user', {
+            fetch('https://share-food-server.vercel.app/user', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

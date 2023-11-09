@@ -10,7 +10,7 @@ const Header = () => {
     const [userData, setUserData] = useState([]);
 
     useEffect( ()=>{
-        fetch(`http://localhost:5000/user/${uEmail}`)
+        fetch(`https://share-food-server.vercel.app/user/${uEmail}`)
         .then(res => res.json())
         .then(data => setUserData(data))
     },[]);
