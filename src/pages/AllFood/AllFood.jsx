@@ -9,12 +9,11 @@ const AllFood = () => {
 
     const [data, setData] = useState([]);
     const [isSorted, setIsSorted] = useState(false);
-    const [isSearch, setIsSearch] = useState(false);
+    const [search, setSearch] = useState("");
 
     useEffect(()=>{
       handleSort();
-      handleSearch();
-    },[isSorted])
+    },[isSorted, search])
 
     const handleSort = () => {
       if (isSorted) {
@@ -26,16 +25,19 @@ const AllFood = () => {
         setData(foods);
       }
     }
-    const handleSearch = () => {
-      if (isSorted) {
-        const sortedData = [...foods].sort((a, b) => {
-          return a.expDate.localeCompare(b.expDate, undefined, { sensitivity: 'base' });
-        });
-        setData(sortedData);
-      } else {
+    const handleSearch = (e) => {
+      e.preventDefault();
+      const searchText = e.target.search.value.toLowerCase();
+      if(searchText){
+        const filteredData = foods.filter((food) =>
+          food.foodName.toLowerCase().includes(searchText)
+        );
+        setData(filteredData);
+      }
+      else {
         setData(foods);
       }
-    }
+    };
   
     return (
       <div className="py-24 bg-white">

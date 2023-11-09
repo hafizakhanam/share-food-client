@@ -13,7 +13,7 @@ const ManageFood = () => {
     const [manageFoods, setManageFoods] = useState([]);
     console.log(uID)
     useEffect( ()=>{
-        fetch(`https://share-food-server-axpy5ie95-hafizas-projects.vercel.app/manage-food/${uID}`)
+        fetch(`https://share-food-server.vercel.app/manage-food/${uID}`)
         .then(res => res.json())
         .then(data => setManageFoods(data))
     },[])
@@ -29,7 +29,7 @@ const ManageFood = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) { 
-              fetch(`https://share-food-server-axpy5ie95-hafizas-projects.vercel.app/food/${_id}`, {
+              fetch(`https://share-food-server.vercel.app/food/${_id}`, {
                 method: 'DELETE'
               })
               .then(res => res.json())

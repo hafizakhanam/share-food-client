@@ -10,7 +10,7 @@ const AddFood = () => {
     const [userData, setUserData] = useState([]);
 
     useEffect( ()=>{
-        fetch(`https://share-food-server-axpy5ie95-hafizas-projects.vercel.app/user/${uEmail}`)
+        fetch(`https://share-food-server.vercel.app/user/${uEmail}`)
         .then(res => res.json())
         .then(data => setUserData(data))
     },[]);
@@ -37,7 +37,7 @@ const AddFood = () => {
         //console.log(newProduct);
 
         // send data to the server
-        fetch('https://share-food-server-axpy5ie95-hafizas-projects.vercel.app/food', {
+        fetch('https://share-food-server.vercel.app/food', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

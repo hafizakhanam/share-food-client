@@ -11,7 +11,7 @@ const FoodRequest = () => {
     const [requestData, setRequestData] = useState([]);
 
     useEffect( ()=>{
-        fetch(`https://share-food-server-axpy5ie95-hafizas-projects.vercel.app/request/${uID}`)
+        fetch(`https://share-food-server.vercel.app/request/${uID}`)
         .then(res => res.json())
         .then(data => setRequestData(data))
     },[])
@@ -27,7 +27,7 @@ const FoodRequest = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) { 
-                fetch(`https://share-food-server-axpy5ie95-hafizas-projects.vercel.app/request/${id}`, {
+                fetch(`https://share-food-server.vercel.app/request/${id}`, {
                     method: 'DELETE'
                 })
                 .then(res => res.json())
